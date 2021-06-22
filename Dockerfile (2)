@@ -1,0 +1,9 @@
+FROM mcr.microsoft.com/dotnet/framework/sdk:3.5 AS build 
+
+SHELL ["powershell"]
+
+RUN dotnet new webApp -o myWebApp --no-https
+
+RUN cd myWebApp
+
+RUN dotnet watch run 
